@@ -7,18 +7,18 @@ body {
 .container {
   display: flex;
   flex-direction: column;
-  width: 500px;
-  height: 500px;
+  width: 600px;
+  height: 600px;
 }
 
-.column {
+.row {
   display: flex;
   flex-grow: 1;
 }
 
 .square {
   flex-grow: 1;
-  border: 1px solid black;
+  border: 1px solid black; /* using this for testing only */
   box-sizing: border-box;
 }
 

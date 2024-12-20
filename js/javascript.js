@@ -1,15 +1,20 @@
 const container = document.querySelector(".container")
 
+let gridNum = 16;
 
-// This sets up the intial grid.  Want to change it to be the function later
-for (let i = 0; i < 16; i++) {
-  let column = document.createElement("div");
-  column.classList.add("column");
-  for (let j = 0; j < 16; j++) {
-      let row = document.createElement("div");
-      row.classList.add("square");
-      column.appendChild(row);
+
+function createGrid () {
+  for (let i = 0; i < gridNum; i++){
+    const row = document.createElement("div");
+    row.classList.add("row");
+      for (let j = 0; j < gridNum; j++) {
+        const square = document.createElement("div");
+        square.classList.add("square");
+        row.appendChild(square);
+      }
+    container.appendChild(row);  
   }
-
-  container.appendChild(column);
 }
+
+
+createGrid()
