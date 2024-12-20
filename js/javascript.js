@@ -1,4 +1,5 @@
 const container = document.querySelector(".container")
+const btn = document.querySelector("#newGrid")
 
 // let gridNum = 16;
 
@@ -23,13 +24,21 @@ function updateColor (event){
 
 
 function updateGrid() {
-  const userResponse = prompt()
+  const userResponse = prompt("Enter Number of Squares per Side (100 or less");
+
+  if (userResponse < 1 || userResponse > 100) {
+    alert("No Negatives or numbers above 100");
+    return;
+  }
+
+  container.querySelectorAll("div").forEach(e => e.remove());
+
+  createGrid(parseInt(userResponse));
   
 }
 
 
+btn.addEventListener("click", updateGrid);
 
-
-
-
-createGrid(16)
+// Initialize grid on start up 
+createGrid(16) 
